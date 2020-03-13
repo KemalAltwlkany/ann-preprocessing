@@ -61,13 +61,16 @@ def rgb_to_grayscale(img_array):
     the next 1024 elements to the green entries and the last 1024 elements to the blue component (RGB image).
     :return:
     """
-    # img = np.transpose(np.reshape(img_array, (3, 32, 32)), (1, 2, 0))
+    img2 = np.transpose(np.reshape(img_array, (3, 32, 32)), (1, 2, 0))
     r, g, b = img_array[0:1024], img_array[1024:2048], img_array[2048:]
     y = 0.2126*r + 0.7152*g + 0.0722*b
+    print(y)
     img = np.reshape(y, (1, 32, 32))
+    print(img)
     img = np.mean(img, axis=0)
+    print(img)
     print(img.shape)
-    return img
+    return img, img2
 
 
 def demo():
@@ -77,8 +80,10 @@ def demo():
                               '/batches.meta')
 
     # img = data[0]
-    for i in range(10):
-        img = rgb_to_grayscale(data[i])
+    for i in range(150, 151):
+        img, img2 = rgb_to_grayscale(data[i])
+        img2 = Image.fromarray(img2)
+        img2.show()
         img = Image.fromarray(img)
         img.show()
 
