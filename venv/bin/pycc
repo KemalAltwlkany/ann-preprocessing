@@ -1,0 +1,3 @@
+#!/home/kemal/Programming/Python/Image_preprocessing_for_ANNs/venv/bin/python
+from numba.pycc import main
+main()
