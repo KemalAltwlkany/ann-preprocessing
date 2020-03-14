@@ -1,0 +1,1 @@
+Since tensorflow is only compatible with Python 3.5-3.7, I created a second venv, "venv3.7". The interperter is Python3.7.7 for venv3.7.

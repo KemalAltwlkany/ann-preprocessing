@@ -82,6 +82,9 @@ def demo():
     # img = data[0]
     for i in range(150, 151):
         img, img2 = rgb_to_grayscale(data[i])
+        plt.imshow(img)
+        plt.imshow(img2)
+        plt.show()
         img2 = Image.fromarray(img2)
         img2.show()
         img = Image.fromarray(img)
